@@ -24,3 +24,9 @@ kafka:
   bootstrap-servers: kafka:9092
   topic:
     cliente-creado: cliente-creado
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    properties:
+      request.timeout.ms: 120000
+      metadata.fetch.timeout.ms: 120000

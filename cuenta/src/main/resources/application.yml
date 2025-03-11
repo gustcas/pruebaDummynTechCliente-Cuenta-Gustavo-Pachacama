@@ -20,8 +20,15 @@ server:
 
 kafka:
   bootstrap-servers: kafka:9092
+  consumer:
+    group-id: movimiento-cliente
+    auto-offset-reset: earliest
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
   topic:
-    cliente-creado: cliente-creado
     cuenta-creada: cuenta-creada
     movimiento-creado: movimiento-creado
     movimiento-error: movimiento-error
